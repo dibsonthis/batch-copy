@@ -1,8 +1,0 @@
-top_frame = tk.Frame(root)
-
-bottom_frame = tk.Frame(root)
-
-root.title("Batch Copy")
-
-root.geometry("200x200")
-

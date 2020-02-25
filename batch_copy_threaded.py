@@ -57,6 +57,7 @@ def batch_copy(seperator):
     # copy_to_clipboard(content_list)
 
 def begin_batch_copy(seperator):
+    stop_event.clear()
     thread = threading.Thread(target=batch_copy, args=[seperator])
     thread.start()
 

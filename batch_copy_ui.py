@@ -25,7 +25,7 @@ root.title("Batch Copy")
 top_frame = tk.Frame(root)
 bottom_frame = tk.Frame(root)
 
-seperator_label = tk.Label(top_frame, text="Seperator:")
+seperator_label = tk.Label(top_frame, text="Separator:")
 seperator_label.configure(font=("Helvetica", 8, "bold"))
 seperator_label.pack(fill=tk.X, pady=(0,10))
 seperator = tk.StringVar()

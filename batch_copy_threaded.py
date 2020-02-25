@@ -1,5 +1,11 @@
+import os 
 import threading
 import pyperclip
+
+current_directory = os.getcwd()
+batch_copy_file = current_directory.replace('\\','/') + '/batch_copy.txt'
+
+print(current_directory)
 
 def get_clipboard_data():
     data = pyperclip.paste()
@@ -19,13 +25,13 @@ def batch_copy():
     clear_clipboard()
 
     # Clears file
-    open('batch_copy.txt', 'w').close()
+    open(batch_copy_file, 'w').close()
 
     print("Batch Copy Started")
 
     while not stop_event.isSet():
         # Opens file for appending
-        with open('batch_copy.txt', 'a+') as file:
+        with open(batch_copy_file, 'a+') as file:
             content = get_clipboard_data()
             if content:
                 content_list.append(content)
@@ -35,7 +41,7 @@ def batch_copy():
 
     print("Batch Copy Ended")
 
-    with open('batch_copy.txt', 'r') as file:
+    with open(batch_copy_file, 'r') as file:
         file_content = file.read()
 
     copy_to_clipboard(file_content)

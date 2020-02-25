@@ -17,7 +17,12 @@ def copy_to_clipboard(content):
 def clear_clipboard():
     pyperclip.copy('')
 
-def batch_copy():
+def batch_copy(seperator):
+
+    if seperator == 'space':
+        seperator = ' '
+    elif seperator == 'newline':
+        seperator = '\n'
 
     content_list = []
 
@@ -35,7 +40,7 @@ def batch_copy():
             content = get_clipboard_data()
             if content:
                 content_list.append(content)
-                file.write(content + ' ')
+                file.write(content + seperator)
                 clear_clipboard()
                 print(content_list)
 
@@ -46,13 +51,13 @@ def batch_copy():
 
     copy_to_clipboard(file_content)
 
-    # Join all blocks together
-    content_list = ' '.join(content_list)
-    # Insert into clipboard
-    copy_to_clipboard(content_list)
+    # # Join all blocks together
+    # content_list = ' '.join(content_list)
+    # # Insert into clipboard
+    # copy_to_clipboard(content_list)
 
-def begin_batch_copy():
-    thread = threading.Thread(target=batch_copy)
+def begin_batch_copy(seperator):
+    thread = threading.Thread(target=batch_copy, args=[seperator])
     thread.start()
 
 def end_batch_copy():

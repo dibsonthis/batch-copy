@@ -40,10 +40,8 @@ def batch_copy():
 
     copy_to_clipboard(file_content)
 
-    # Add spaces to each copied block
-    content_list = [x + ' ' for x in content_list]
     # Join all blocks together
-    content_list = ''.join(content_list)
+    content_list = ' '.join(content_list)
     # Insert into clipboard
     copy_to_clipboard(content_list)
 

@@ -1,6 +1,5 @@
 import tkinter as tk
 from batch_copy_threaded import begin_batch_copy, end_batch_copy
-import pyperclip
 
 def begin():
     begin_batch_copy()

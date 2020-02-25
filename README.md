@@ -7,7 +7,7 @@ To see this tool in action, please watch the included demo clip.
 
 Batch Copy version 0.1 can be found under batch-copy/dist as an executable file.
 
-Instructions:
+# Instructions:
 
 1- Select a separator (how you want your output stack to be pasted - either with spaces between blocks or newline)
 

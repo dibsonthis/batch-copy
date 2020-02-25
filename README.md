@@ -15,7 +15,7 @@ Instructions:
 
 3- Copy whatever you want from any source
 
-4- Click 'End Batch Copy
+4- Click 'End Batch Copy'
 
 5- Paste
 
